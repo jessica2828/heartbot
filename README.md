@@ -30,16 +30,16 @@ Volunteers are allowed to perform certain functions using specific commands. Bel
 ## Evaluation
 In brainstorming for a solution, we prioritised cost-effectiveness and efficiency. After careful consideration, we chose to develop a Telegram bot. Here’s why we believe HeartBot to be the most suitable solution for addressing Big at Heart’s needs:
 
-## Cost-Effective
+#### Cost-Effective
 By leveraging Telegram's platform, which incurs minimal costs, our solution eliminates the need for expensive software licences or infrastructure investments. This allows Big at Heart to allocate resources to other areas.
 
-## Accessible
+#### Accessible
 A 2024 study shows that Telegram has more than 800 million monthly active users and is the highest-ranked messaging app in Singapore on Google Play. Given its widespread use, it facilitates the recruitment process for volunteers as it does not require them to download or access any additional application or website, thus increasing convenience and accessibility.
 
-## User-Friendly Interface
+#### User-Friendly Interface
 HeartBot is designed with a user-friendly interface. It provides a menu for volunteers to look through the list of available commands and their functionalities. By simply sending a command, volunteers can enrol, sign up for activities, request certificates, track attendance and provide feedback, reducing the learning curve associated with administrative tasks.
 
-## Boost Efficiency
+#### Boost Efficiency
 The current process for volunteer management is highly laborious, inefficient, and disorganised. HeartBot addresses these challenges by consolidating various administrative tasks within a single platform so as to eliminate the need for multiple disparate systems. It also automates tasks such as the tracking of volunteer hours to reduce manual efforts, hence greatly enhancing overall productivity. 
 
 To conclude, HeartBot emerges as the best possible solution for Big at Heart’s needs due to its cost-effective nature, extensive reach and accessibility, user-friendly interface, and focus on efficiency. We hope to be able to empower both volunteers and administrators to contribute effectively towards the organisation and its mission. 
