@@ -31,13 +31,62 @@ def gender_handler(message):
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)  # Create a ReplyKeyboardMarkup
     markup.add(types.KeyboardButton('Male'), types.KeyboardButton('Female'))
     bot.send_message(message.chat.id, f"Hi {name}, welcome to Big at Heart. Please select your gender below to continue: ", reply_markup=markup)
+    bot.register_next_step_handler(sent_msg, email_handler)
+
+def email_handler(message):
+    text = "Please enter a valid email address: "
+    sent_msg = bot.send_message(message.chat.id, text, parse_mode="Markdown")
+    bot.register_next_step_handler(sent_msg, dob_handler)
+
+def dob_handler(message):
+    text = "Please enter your Date of Birth in the (DD/MM/YYYY) format: "
+    sent_msg = bot.send_message(message.chat.id, text, parse_mode="Markdown")
+    bot.register_next_step_handler(sent_msg, address_handler)
+
+def address_handler(message): 
+    text = "Please enter your mailing address (input NA if not Applicable): "
+    sent_msg = bot.send_message(message.chat.id, text, parse_mode="Markdown")
+    bot.register_next_step_handler(sent_msg, age_handler)
+
+def avail_handler(message):
+    name = message.text
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)  # Create a ReplyKeyboardMarkup
+    markup.add(types.KeyboardButton('AM'), types.KeyboardButton('PM'))
+    bot.send_message(message.chat.id, "Please select your availability: ", reply_markup=markup)
+    bot.register_next_step_handler(sent_msg, exp_handler)
+
+def exp_handler(message):
+    name = message.text
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)  # Create a ReplyKeyboardMarkup
+    markup.add(types.KeyboardButton('Yes'), types.KeyboardButton('No'))
+    bot.send_message(message.chat.id, "Do you have prior volunteering experience? ", reply_markup=markup)
+    bot.register_next_step_handler(sent_msg, interest_handler)
+
+def interest_handler(message):
+    response = message.text
+    if response.lower() == 'yes':
+        bot.send_message(message.chat.id, "Please enter your previous relevant experience.")
+        bot.register_next_step_handler(message, experience_input_handler)
+    elif response.lower() == 'no':
+        bot.register_next_step_handler(sent_msg, finish_handler)
+
+def experience_input_handler(message):
+    experience = message.text
+    # Process the user's input here, for example, save it to a database or perform further actions
+    bot.send_message(message.chat.id, "Thank you for providing your previous relevant experience.")
+    bot.register_next_step_handler(sent_msg, finish_handler)
+
+
+def finish_handler(message):
+    text = "You have successfully registered with us. Please select /events to look at the latest volunteering opportunities."
+    sent_msg = bot.send_message(message.chat.id, text, parse_mode="Markdown")
 
 
 @bot.message_handler(commands=['attendance'])
 def attendance_handler(message):
     text = "Your attendance for this volunteering session has been marked. Thank you for volunteering with Big at Heart."
     sent_msg = bot.send_message(message.chat.id, text, parse_mode="Markdown")
-    # bot.register_next_step_handler(sent_msg, age_handler)
+
 
 events = [
     {
