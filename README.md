@@ -21,7 +21,7 @@ git clone https://github.com/your_username/heartbot.git
 ### Install the required dependencies:
 
 ```python
-pip install -r requirements.txt
+pip install pyTelegramBotAPI
 ```
 
 ### Set up your Telegram bot:
@@ -33,7 +33,7 @@ Replace the BOT_TOKEN variable in main.py with your bot token.
 
 ```python
 
-python main.py
+python bot.py
 ```
 
 ## Usage
